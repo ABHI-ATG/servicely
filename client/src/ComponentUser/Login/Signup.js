@@ -29,7 +29,7 @@ const SignIn = () => {
         console.log(userData);
         try{
 
-            const res=await fetch('https://servicely-backend.onrender.  com/signup',{
+            const res=await fetch('https://servicely-backend.onrender.com/signup',{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"
