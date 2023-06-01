@@ -8,7 +8,7 @@ const Home=()=>{
 
     const call=async ()=>{
         console.log("home")
-        const res=await fetch('/',{
+        const res=await fetch('https://servicely-backend.onrender.com',{
             method:"GET",
             headers:{
                 "Content-Type":"application/json"

@@ -64,7 +64,7 @@ const SignInn = () => {
 
         const {fname,lname,email,mobile,state,district,pincode,city,profession,password,cpassword}=userData;
         console.log(userData);
-        const res=await fetch('/register',{
+        const res=await fetch('https://servicely-backend.onrender.com/register',{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"

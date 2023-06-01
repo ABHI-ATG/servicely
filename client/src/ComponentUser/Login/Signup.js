@@ -25,25 +25,27 @@ const SignIn = () => {
 
     const onSubmit=async (e)=>{
         e.preventDefault();
-
-        const {fname,lname,email,mobile,password,cpassword}=userData;
+        const {fname,lname,email,mobile,password,cpassword} =userData;
         console.log(userData);
-        const res=await fetch('/signup',{
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body:JSON.stringify({
-                fname:fname,lname:lname,email:email,mobile:mobile,password:password,cpassword:cpassword
-            })
-        })
+        try{
 
-        const data=await res.json();
-        if(data.status===400 || !data){
-            console.log("Fail to Sign Up");
-        }else{
+            const res=await fetch('https://servicely-backend.onrender.  com/signup',{
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify({
+                    fname:fname,lname:lname,email:email,mobile:mobile,  password:password,cpassword:cpassword
+                })
+            })
+            if(!res.ok || res.status==400){
+                throw new Error('Request Failed');
+            }
+            const data=await res.json();
             console.log("Success");
             navigate('/signin');
+        }catch(err){
+            console.log(err);
         }
     }
 

@@ -9,7 +9,7 @@ const Logout = () => {
 
     const callLogOut=async()=>{
         try{
-            const res=await fetch('/logout',{
+            const res=await fetch('https://servicely-backend.onrender.com/logout',{
                 method:"GET",
                 headers:{
                     Accept:"application/json",

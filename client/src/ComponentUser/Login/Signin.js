@@ -21,7 +21,7 @@ const Login = () => {
   const onSubmit=async (e)=>{
     e.preventDefault();
 
-    const res=await fetch('/signin',{
+    const res=await fetch('https://servicely-backend.onrender.com/signin',{
         method:"POST",
         headers:{
             "Content-Type":"application/json"
